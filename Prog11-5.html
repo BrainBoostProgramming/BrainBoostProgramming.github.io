@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Programming 11</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="github-markdown.css">
+    <link rel="stylesheet" href="highlight.min.css">
+    <link rel="stylesheet" href="katex.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                overflow-x: scroll;
+                padding: 15px;
+                padding-left: 44px;
+                border: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidenav">
+        <a href="index.html">0</a>
+        <a href="Prog11-1.html">1</a>
+        <a href="Prog11-2.html">2</a>
+        <a href="Prog11-3.html">3</a>
+        <a href="Prog11-4.html">4</a>
+        <a href="Prog11-5.html">5</a>
+        <a href="Prog11-6.html">6</a>
+        <a href="Prog11-7.html">7</a>
+        <a href="Prog11-8.html">8</a>
+        <a href="Prog11-9.html">9</a>
+        <a href="Prog11-10.html">10</a>
+        <a href="Prog11-11.html">11</a>
+        <a href="Prog11-12.html">12</a>
+        <a href="Prog11-13.html">13</a>
+        <a href="Prog11-14.html">14</a>
+        <a href="Prog11-15.html">15</a>
+        <a href="Prog11-16.html">16</a>
+        <a href="Prog11-17.html">17</a>
+        <a href="Prog11-18.html">18</a>
+    </div>
+
+    <div class="markdown-body main">
+        <h1>Programming 11</h1>
+<h2>Assignment 5</h2>
+<p>Boom <a href="http://www.programmedlessons.org/Java9/chap12/ch12_01.html">Chapter 12</a>. Whole buncha stuff in there, don't worry if it doesn't make sense at first. Pretty much stuff is input into the computer and we can use Java to figure out what that stuff is (spoiler: it's mostly keyboard strokes) and do cool stuff with it.</p>
+<p>Just to start let's get this program running with BlueJ:</p>
+<pre><code class="language-java">import java.util.Scanner;
+class Echo {
+    public static void main (String[] args) {
+        String inData;
+        Scanner scan = new Scanner(System.in);
+        System.out.println(&quot;Enter the data:&quot;);
+        inData = scan.nextLine();
+        System.out.println(&quot;You entered:&quot; + inData);
+    }
+}
+</code></pre>
+<p>All this program does is prompts the user for some input, then outputs it back to them. Let's go over it line by line.</p>
+<pre><code class="language-java">import java.util.Scanner;
+</code></pre>
+<p>This line tells the compiler that our program is going to include the <code>Scanner</code> package. The <code>Scanner</code> class is what will allow us to read characters entered into the console.</p>
+<pre><code class="language-java">class Echo {
+    public static void main (String[] args) {
+</code></pre>
+<p>We declare the class <code>Echo</code> and give it a main method.</p>
+<pre><code class="language-java">String inData;
+</code></pre>
+<p>We declare a variable of type <code>String</code> named <code>inData</code>. We don't give it an initial value.</p>
+<pre><code class="language-java">Scanner scan = new Scanner(System.in);
+</code></pre>
+<p>This line creates a new instance of the <code>Scanner</code> class called <code>scan</code>. This particular Scanner instance is going to be used to read the system input, so we pass in <code>System.in</code>.</p>
+<pre><code class="language-java">System.out.println(&quot;Enter the data:&quot;);
+</code></pre>
+<p>Prompts the user to enter some data.</p>
+<pre><code class="language-java">inData = scan.nextLine();
+</code></pre>
+<p>When the computer hits this line, execution is paused until the user hits the enter key. Once the enter key is pressed, the <code>scan</code> object scans whatever was input up to the point the enter key was pressed (which would start the next line). That scanned text is then stored in the <code>inData</code> variable we declared at the start of the program.</p>
+<pre><code class="language-java">System.out.println(&quot;You entered:&quot; + inData);
+</code></pre>
+<p>Lastly, we print out the value of the inData variable.</p>
+<hr>
+<p>Neat. Now we got 13 questions up in this. For some of these questions the answer is in the chapter I linked at the start, go scroll up and read it if you get stuck, or use Google.</p>
+<ol>
+<li>
+<p>Java has three standard I/O streams. One of them is <code>System.in</code>. What are the other two?</p>
+</li>
+<li>
+<p>Which System package do you use to print a message to the console such as &quot;Hello, World!&quot;?</p>
+</li>
+<li>
+<p>What line do you add at the top of a program to access the Scanner object?</p>
+</li>
+<li>
+<p>What package is the Scanner object part of?</p>
+</li>
+<li>
+<p>Which line of the example Echo program does each of the following:</p>
+<ol>
+<li>Creates the Scanner object?</li>
+<li>Prompts for input?</li>
+<li>Reads the input?</li>
+</ol>
+</li>
+<li>
+<p>In the Echo program the name of the created Scanner object is <code>scan</code>. Would the program still run as expected if you were to change <code>scan</code> to <code>dog</code>?</p>
+<p>On which other line would you have to change <code>scan</code> to <code>dog</code> for the program to work?</p>
+</li>
+<li>
+<p>Which line tells the computer to get the data entered into the console up to where the enter key was pressed and a new line was created?</p>
+</li>
+<li>
+<p>Using the Echo program as an example, write a program that asks for a name and replies with a greeting using that name. Output should look like this:</p>
+<blockquote>
+<p>Enter your name:</p>
+<p>Chad</p>
+<p>Hello, Chad.</p>
+</blockquote>
+</li>
+<li>
+<p>In your program from question 9 try of using <code>System.out.println(&quot;Enter your name: &quot;);</code> try removing the 'ln' after 'print'. What does the output look like now?</p>
+</li>
+<li>
+<p>The Scanner class gives access to the <code>nextLine()</code> method which we use to read input as a <code>String</code>. What method would you use to read input as an <code>int</code>? Take a look at <a href="https://docs.oracle.com/javase/9/docs/api/java/util/Scanner.html#method.summary">this</a>  confusing documentation page for the answer! Or you could read the chapter, you did read it all, right? There's an entire page just for the answer to this question!</p>
+</li>
+<li>
+<p>Get the following program running in BlueJ:</p>
+<pre><code class="language-java">import java.util.Scanner;
+
+public class EchoSquare {
+    public static void main (String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int num, square;      // declare two int variables
+
+        System.out.println(&quot;Enter an integer:&quot;);
+        num = scan.nextInt();
+        square = num * num ;  // compute the square
+
+        System.out.println(&quot;The square of &quot; + num + &quot; is &quot; + square);
+    }
+}
+</code></pre>
+<ol>
+<li>What is the output if you enter 46 as the input?</li>
+<li>What if you input 50000?</li>
+<li>How would you fix the program so that it gives the correct output for an input of 50000? (Hint: remember that there's a primitive integer data type bigger than <code>int</code>)</li>
+</ol>
+</li>
+<li>
+<p>Get this code working in BlueJ:</p>
+<pre><code class="language-java">import java.util.Scanner;
+
+public class AddTwo {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int first, second, sum;      // declaration of int variables
+
+        System.out.println(&quot;Enter first integer:&quot;);
+        first = scan.nextInt();       // read chars and convert to int
+
+        System.out.println(&quot;Enter second integer:&quot;);
+        second = scan.nextInt();      // read chars and convert to int
+
+        sum = first + second;         // add the two ints, put result in sum
+
+        System.out.println(&quot;The sum of &quot; + first + &quot; plus &quot; + second +&quot; is &quot; + sum);
+    }
+}
+</code></pre>
+<p>Modify it so it works with 3 numbers instead of 2.</p>
+</li>
+<li>
+<p>Get this code working in BlueJ:</p>
+<pre><code class="language-java">import java.util.Scanner;
+
+public class IntDivideTest {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int dividend, divisor ;                      // int versions of input
+        int quotient, remainder ;                    // results of &quot;/&quot; and &quot;%&quot;
+
+        System.out.println(&quot;Enter the dividend:&quot;);   // read the dividend
+        dividend = scan.nextInt();
+
+        System.out.println(&quot;Enter the divisor:&quot;);    // read the divisor
+        divisor  = scan.nextInt();
+
+        quotient = dividend / divisor;              // perform int math
+        remainder= dividend % divisor;
+
+        System.out.println(dividend + &quot; / &quot; + divisor + &quot; is &quot; + quotient);
+        System.out.println(dividend + &quot; % &quot; + divisor + &quot; is &quot; + remainder);
+        System.out.println(quotient + &quot; * &quot; + divisor + &quot; + &quot; + remainder + &quot; is &quot; + (quotient*divisor+remainder));
+    }
+}
+</code></pre>
+<p>What is the output of the program for an input of 17 and 12?</p>
+</li>
+<li>
+<p>Done!</p>
+</li>
+</ol>
+
+    </div>
+
+    <script src="katex.min.js"></script>
+    <script src="highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

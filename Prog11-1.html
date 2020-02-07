@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Programming 11</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="github-markdown.css">
+    <link rel="stylesheet" href="highlight.min.css">
+    <link rel="stylesheet" href="katex.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                overflow-x: scroll;
+                padding: 15px;
+                padding-left: 44px;
+                border: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidenav">
+        <a href="index.html">0</a>
+        <a href="Prog11-1.html">1</a>
+        <a href="Prog11-2.html">2</a>
+        <a href="Prog11-3.html">3</a>
+        <a href="Prog11-4.html">4</a>
+        <a href="Prog11-5.html">5</a>
+        <a href="Prog11-6.html">6</a>
+        <a href="Prog11-7.html">7</a>
+        <a href="Prog11-8.html">8</a>
+        <a href="Prog11-9.html">9</a>
+        <a href="Prog11-10.html">10</a>
+        <a href="Prog11-11.html">11</a>
+        <a href="Prog11-12.html">12</a>
+        <a href="Prog11-13.html">13</a>
+        <a href="Prog11-14.html">14</a>
+        <a href="Prog11-15.html">15</a>
+        <a href="Prog11-16.html">16</a>
+        <a href="Prog11-17.html">17</a>
+        <a href="Prog11-18.html">18</a>
+    </div>
+
+    <div class="markdown-body main">
+        <h1>Programming 11</h1>
+<h2>Assignment 1</h2>
+<ol>
+<li>
+<p>Download and install the latest <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">JDK</a> (currently version 9).</p>
+</li>
+<li>
+<p>Download and install <a href="https://www.bluej.org/index.html">BlueJ</a>.</p>
+</li>
+<li>
+<p>Clone the course skeleton to your computer.</p>
+</li>
+<li>
+<p>Cool, now open BlueJ!</p>
+</li>
+<li>
+<p>In BlueJ click Project, then Open Project...</p>
+<p><img src="https://i.imgur.com/XaGUNqN.png" alt="img"></p>
+</li>
+<li>
+<p>Select the 'Assignment1' folder as the project to open.</p>
+<p><img src="https://i.imgur.com/5ERxu5V.png" alt="img"></p>
+</li>
+<li>
+<p>Double click the class 'HelloWorldApp' to open it in the BlueJ editor.</p>
+<p><img src="https://i.imgur.com/nKjg6eQ.png" alt="img"></p>
+</li>
+<li>
+<p>Copy and paste following code into the editor.</p>
+<pre><code class="language-java">/**
+* The HelloWorldApp class implements an application that simply
+* displays &quot;Hello World!&quot; to the standard output.
+*/
+class HelloWorldApp {
+    public static void main(String[] args) {
+        System.out.println(&quot;Hello World!&quot;);
+    }
+}
+</code></pre>
+</li>
+<li>
+<p>Click on 'Compile' in the editor window. This will compile the human-readable <strong>source</strong> code into <strong>byte code</strong> that can be executed by the Java Virtual Machine (more on what that is later).</p>
+<p><img src="https://i.imgur.com/BGr6gwb.png" alt="ayy"></p>
+<p>You should hopefully see this message on the bottom left of the window.</p>
+<p><img src="https://i.imgur.com/VmwchUl.png" alt="ayy"></p>
+</li>
+<li>
+<p>Back in the main BlueJ window, right click the &quot;HelloWorldApp&quot; rectangle and click 'void main(String[] args)'.</p>
+</li>
+<li>
+<p>Hit 'OK' in the window that pops up.</p>
+<p><img src="https://i.imgur.com/1uaoZ4d.png" alt="ayy"></p>
+</li>
+<li>
+<p>Wow! It did the thing.</p>
+<p><img src="https://i.imgur.com/cuwpjPh.png" alt="ayy"></p>
+</li>
+<li>
+<p>Alright you can copy and paste, which is really 90% of programming. But just for fun let's make some changes. Change the program so that it prints out:</p>
+<ul>
+<li>Best animal.</li>
+<li>Best Pokemon.</li>
+<li><eq><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mn>0</mn><mo>+</mo><mn>1</mn><mn>0</mn></mrow><annotation encoding="application/x-tex">10+10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="base"><span class="mord">1</span><span class="mord">0</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span></eq>.</li>
+<li>Who killed JFK.</li>
+<li>If Denmark is a real country.</li>
+<li>Submission date.</li>
+</ul>
+<p>Make sure these get printed out on separate lines!</p>
+<p>Wrong:</p>
+<p><img src="https://i.imgur.com/01MgEv5.png" alt="img"></p>
+<p>Right:</p>
+<p><img src="https://i.imgur.com/oBlRHfo.png" alt="img"></p>
+</li>
+<li>
+<p>Commit and push your changes for grading.</p>
+<p><img src="https://i.imgur.com/pSHGoXG.png" alt="img"></p>
+</li>
+</ol>
+
+    </div>
+
+    <script src="katex.min.js"></script>
+    <script src="highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

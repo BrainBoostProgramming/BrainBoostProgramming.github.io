@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Programming 11</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="github-markdown.css">
+    <link rel="stylesheet" href="highlight.min.css">
+    <link rel="stylesheet" href="katex.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                overflow-x: scroll;
+                padding: 15px;
+                padding-left: 44px;
+                border: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidenav">
+        <a href="index.html">0</a>
+        <a href="Prog11-1.html">1</a>
+        <a href="Prog11-2.html">2</a>
+        <a href="Prog11-3.html">3</a>
+        <a href="Prog11-4.html">4</a>
+        <a href="Prog11-5.html">5</a>
+        <a href="Prog11-6.html">6</a>
+        <a href="Prog11-7.html">7</a>
+        <a href="Prog11-8.html">8</a>
+        <a href="Prog11-9.html">9</a>
+        <a href="Prog11-10.html">10</a>
+        <a href="Prog11-11.html">11</a>
+        <a href="Prog11-12.html">12</a>
+        <a href="Prog11-13.html">13</a>
+        <a href="Prog11-14.html">14</a>
+        <a href="Prog11-15.html">15</a>
+        <a href="Prog11-16.html">16</a>
+        <a href="Prog11-17.html">17</a>
+        <a href="Prog11-18.html">18</a>
+    </div>
+
+    <div class="markdown-body main">
+        <h1>Programming 11</h1>
+<h2>Assignment 12</h2>
+<p>Ayyy what up. Quick little assignment right here. This is going to cover reading/writing files with Java. Here's <a href="http://www.programmedlessons.org/Java9/chap72/ch72_01.html">chapter 72</a> if you want to take a look. Don't <em>really</em> need to read it as you can just learn from doing the questions, but it's there if you get stuck.</p>
+<p>Until now we've created <code>Scanner</code> objects like so:</p>
+<pre><code class="language-java">Scanner scan = new Scanner(System.in);
+</code></pre>
+<p>The <code>System.in</code> part tells the created <code>Scanner</code> object that it's going to be reading from the standard input. In our case that has been the BlueJ console input. The <code>Scanner</code> object can also be constructed like so:</p>
+<pre><code class="language-java">Scanner sc = new Scanner(new File(&quot;example.txt&quot;));
+</code></pre>
+<p>When passed a <code>File</code> object instead of <code>System.in</code> our <code>Scanner</code> will read from that file instead of the console. <a href="https://docs.oracle.com/javase/9/docs/api/java/util/Scanner.html">Check out the documentation for the <code>Scanner</code> class to see some examples and some other ways a <code>Scanner</code> can be constructed!</a></p>
+<p>For easy reference here's the relevant example:</p>
+<pre><code class="language-java">Scanner sc = new Scanner(new File(&quot;myNumbers&quot;));
+while (sc.hasNextLong()) {
+    long aLong = sc.nextLong();
+}
+</code></pre>
+<hr>
+<p>To write to files we use the <code>PrintStream</code> class. <a href="https://docs.oracle.com/javase/9/docs/api/java/io/PrintStream.html">Here's a link to the documentation.</a> The <code>PrintStream</code> class has a several constructors including a few that take in a <code>File</code> object or a <code>String</code> fileName. Example:</p>
+<pre><code class="language-java">PrintStream ps = new PrintStream(new File(&quot;example.txt&quot;));
+ps.print(1234);
+</code></pre>
+<p>Since we are technically dealing with character data and not binary data it would make more sense to use <code>PrintWriter</code> <a href="https://docs.oracle.com/javase/9/docs/api/java/io/PrintWriter.html">(doc link)</a>. <a href="https://stackoverflow.com/questions/2822005/java-difference-between-printstream-and-printwriter?noredirect=1&amp;lq=1">Explanation of differences.</a> Example:</p>
+<pre><code class="language-java">PrintWriter pw = new PrintWriter(new File(&quot;example.txt&quot;));
+pw.println(1234);
+</code></pre>
+<p>From what I can tell the actual difference is minimal to the point of almost not existing, but you should use <code>PrintWriter</code> after this assignment.</p>
+<p><img src="https://i.imgur.com/ifmHlqv.jpg" alt="img"></p>
+<p>For the following questions use the file <code>data.txt</code> located in the Assignment12 folder of the skeleton.</p>
+<p><strong>DON'T FORGET COMMENTS.</strong></p>
+<hr>
+<ol>
+<li>
+<p><strong>PrintNumbersToFile.java</strong></p>
+<pre><code class="language-java">import java.util.Scanner;
+import java.io.*;
+
+class PrintNumbersToFile {
+    public static void main (String[] args) throws IOException {
+
+        Scanner scan = new Scanner(System.in);
+        int data = 0;
+        File file = new File(&quot;data.txt&quot;);
+        PrintStream print = new PrintStream(file);
+
+        while (data != -1) {
+            System.out.print(&quot;DATA(-1 to exit): &quot;);
+            data = scan.nextInt();
+            print.println(data);
+        }
+
+        print.close();
+    }
+}
+</code></pre>
+<p>Modify the above program such that it takes the following integer input (in order):</p>
+<ul>
+<li>Age in years (-1 to exit)</li>
+<li>IQ</li>
+<li>Gender (1 for male, 0 for female) (Note I didn't write this question...)</li>
+<li>Height (inches)</li>
+</ul>
+<p>Enter data for at least 10 people using the modified program. If -1 is entered for age then make sure you don't ask the other questions but write -1 to the file as it's what we're using for our end of file marker for now.</p>
+</li>
+<li>
+<p><strong>GetNumbersFromFile.java</strong></p>
+<pre><code class="language-java">import java.util.Scanner;
+import java.io.*;
+
+class GetNumbersFromFile {
+    public static void main (String[] args) throws IOException {
+        File file = new File(&quot;data.txt&quot;);
+        Scanner scan = new Scanner(file);
+        int data = 0;
+        while (data != -1) {
+            data = scan.nextInt();
+            System.out.println(data);
+        }
+        scan.close();
+    }
+}
+</code></pre>
+<p>Note that it would make more sense to do something like:</p>
+<pre><code class="language-java">while (scan.hasNextInt()) {
+    data = scan.nextInt();
+    System.out.println(data);
+}
+</code></pre>
+<p>Just FYI.</p>
+<p>Anyway, modify that program so that it analyzes the data from the file in the following ways:</p>
+<ul>
+<li>Total people in the file.</li>
+<li>Total number of males and total number of females.</li>
+<li>Number of males over 6 feet with an IQ greater than 140.</li>
+<li>Average IQ of all people in file.</li>
+<li>Average height of all people in file.</li>
+<li>Age of oldest person and youngest person in file.</li>
+</ul>
+<p>Example output:</p>
+<pre><code class="language-text">Total people: 23
+Males: 11
+Females: 12
+Males over 6 feet and greater than 140 IQ: 2
+Average IQ: 122
+Average Height: 20
+Oldest: 1002
+Youngest: 0
+</code></pre>
+</li>
+</ol>
+
+    </div>
+
+    <script src="katex.min.js"></script>
+    <script src="highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

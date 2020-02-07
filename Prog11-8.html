@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Programming 11</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="github-markdown.css">
+    <link rel="stylesheet" href="highlight.min.css">
+    <link rel="stylesheet" href="katex.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                overflow-x: scroll;
+                padding: 15px;
+                padding-left: 44px;
+                border: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidenav">
+        <a href="index.html">0</a>
+        <a href="Prog11-1.html">1</a>
+        <a href="Prog11-2.html">2</a>
+        <a href="Prog11-3.html">3</a>
+        <a href="Prog11-4.html">4</a>
+        <a href="Prog11-5.html">5</a>
+        <a href="Prog11-6.html">6</a>
+        <a href="Prog11-7.html">7</a>
+        <a href="Prog11-8.html">8</a>
+        <a href="Prog11-9.html">9</a>
+        <a href="Prog11-10.html">10</a>
+        <a href="Prog11-11.html">11</a>
+        <a href="Prog11-12.html">12</a>
+        <a href="Prog11-13.html">13</a>
+        <a href="Prog11-14.html">14</a>
+        <a href="Prog11-15.html">15</a>
+        <a href="Prog11-16.html">16</a>
+        <a href="Prog11-17.html">17</a>
+        <a href="Prog11-18.html">18</a>
+    </div>
+
+    <div class="markdown-body main">
+        <h1>Programming 11</h1>
+<h2>Assignment 8</h2>
+<p>Read <a href="http://www.programmedlessons.org/Java9/chap17/ch17_01.html">chapter 17</a> and <a href="http://www.programmedlessons.org/Java9/chap18/ch18_01.html">chapter 18</a>. Answer the following questions in the txt file in the course skeleton.</p>
+<ol>
+<li>
+<p>Why is comparing <code>double</code> variables a problem when using if statements?</p>
+</li>
+<li>
+<p>What 2 states can a boolean expression have?</p>
+</li>
+<li>
+<p>How many varieties of if statements are there?</p>
+</li>
+<li>
+<p>When defining a variable what does the word <code>final</code> mean in front of the definition?</p>
+</li>
+<li>
+<p>Do the <a href="http://www.programmedlessons.org/Java9/chap17/chap17quiz.html">chapter 13 quiz</a>. What mark did you get?</p>
+</li>
+<li>
+<p>What is the symbol used in Java for &quot;and&quot;?</p>
+</li>
+<li>
+<p>What is the symbol used in Java for &quot;or&quot;?</p>
+</li>
+<li>
+<p>What is the symbol used in Java for &quot;not&quot;?</p>
+</li>
+<li>
+<p><strong>Deli.java</strong></p>
+<p>You have been asked to write a program for the Sam and Ella Delicatessen. The program takes deli orders from the Internet. It asks for the item, its price in cents, and if express delivery is wanted. The program writes out the order and the charges. Regular delivery for items under $10 is $2.00; for items $10 or more delivery is free. For express delivery add $3.00.</p>
+<pre><code class="language-text">Enter the item: Tuna Salad
+Enter the price: 4.50
+Overnight delivery (0==no, 1==yes): 1
+
+Invoice:
+Tuna Salad    4.50
+delivery      5.00
+total         9.50
+</code></pre>
+</li>
+<li>
+<p><strong>Microwave.java</strong></p>
+<p>A microwave oven manufacturer recommends that when heating two items, add 50% to the heating time, and when heating three items double the heating time. Heating more than three items at once is not recommended.</p>
+<p>Write a program that asks the user for the number of items and the single-item heating time. The program then writes out the recommended heating time.</p>
+<p>Hint: do this with four successive single-branch if statements each of which tests for one of the four cases: 1 item, 2 items, 3 items, more than three items.</p>
+</li>
+<li>
+<p><strong>FantasyGame.java</strong></p>
+<p>In a new role-playing fantasy game players must design their character by picking a point value for each of three characteristics:</p>
+<ul>
+<li>Strength, from 1 to 10</li>
+<li>Health, from 1 to 10</li>
+<li>Luck, from 1 to 10</li>
+</ul>
+<p>Write a program that asks for a name for the character and asks for the point value of for each of the three characteristics. However, the total points must be less than 15. If the total exceeds 15, then 5 points are assigned to each characteristic</p>
+<pre><code class="language-text">Welcome to Yertle's Quest
+Enter the name of your character:
+Chortle
+Enter strength (1-10):
+8
+Enter health (1-10):
+4
+Enter luck (1-10):
+6
+
+You have give your character too many points!  Default values have been assigned:
+Chortle, strength: 5, health: 5, luck: 5
+</code></pre>
+</li>
+<li>
+<p><strong>CheckChecker.java</strong></p>
+<p>A bank has the following rule: if a customer has more than $1000 dollars in their checking account or more than $1500 dollars in their savings account, then there is no service charge for writing checks. Otherwise there is a $0.15 charge per check. Write a program that asks for the balance in each account and then writes out the service charge.</p>
+</li>
+<li>
+<p><strong>TirePressure1.java</strong></p>
+<p>The front tires of a car should both have the same pressure. Also, the rear tires of a car should both have the same pressure (but not necessarily the same pressure as the front tires.) Write a program that reads in the pressure of the four tires and writes a message that says if the inflation is OK or not.</p>
+<pre><code class="language-text">Input right front pressure
+38
+Input left front pressure
+38
+Input right rear pressure
+42
+Input left rear pressure
+42
+
+Inflation is OK
+</code></pre>
+</li>
+<li>
+<p><strong>TirePressure2.java</strong></p>
+<p>Its not enough that the pressures are the same in the tires, but the pressures must also be within range. Modify the program in exercise 1 so that it also checks that each tire has a pressure between 35 and 45. If a tire is out of range, write out an error message immediately, but continue inputting values and processing them:</p>
+<pre><code class="language-text">Input right front pressure
+32
+Warning: pressure is out of range
+
+Input left front pressure
+32
+Warning: pressure is out of range
+
+Input right rear pressure
+42
+Input left rear pressure
+42
+
+Inflation is BAD
+</code></pre>
+<p>If there have been any warnings, write out a final error message. (To do this, declare a boolean variable goodPressure that is initialized to true but is changed to false when an out of range tire is first found.)</p>
+</li>
+</ol>
+
+    </div>
+
+    <script src="katex.min.js"></script>
+    <script src="highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

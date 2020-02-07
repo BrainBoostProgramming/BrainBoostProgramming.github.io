@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Programming 11</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="github-markdown.css">
+    <link rel="stylesheet" href="highlight.min.css">
+    <link rel="stylesheet" href="katex.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                overflow-x: scroll;
+                padding: 15px;
+                padding-left: 44px;
+                border: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidenav">
+        <a href="index.html">0</a>
+        <a href="Prog11-1.html">1</a>
+        <a href="Prog11-2.html">2</a>
+        <a href="Prog11-3.html">3</a>
+        <a href="Prog11-4.html">4</a>
+        <a href="Prog11-5.html">5</a>
+        <a href="Prog11-6.html">6</a>
+        <a href="Prog11-7.html">7</a>
+        <a href="Prog11-8.html">8</a>
+        <a href="Prog11-9.html">9</a>
+        <a href="Prog11-10.html">10</a>
+        <a href="Prog11-11.html">11</a>
+        <a href="Prog11-12.html">12</a>
+        <a href="Prog11-13.html">13</a>
+        <a href="Prog11-14.html">14</a>
+        <a href="Prog11-15.html">15</a>
+        <a href="Prog11-16.html">16</a>
+        <a href="Prog11-17.html">17</a>
+        <a href="Prog11-18.html">18</a>
+    </div>
+
+    <div class="markdown-body main">
+        <h1>Programming 11</h1>
+<h2>Assignment 2</h2>
+<p>Alright time to learn some stuff.</p>
+<p>Read <a href="http://www.programmedlessons.org/Java9/chap06/ch06_01.html">this</a> (use the arrows at the top of the page to navigate through the chapter). Disregard page 6 and page 9.</p>
+<p>Go open Assignment2.txt and answer the following questions in there. Questions are asked in the same order as the book covers them, so feel free to answer each question as you go through the chapter. Save the file. No need to write a whole bunch, and feel free to go back to the linked chapter if you are unsure about something. Just don't copy and paste from the site or I will release thousands of angry hornets into the room and we will all perish.</p>
+<ol>
+<li>
+<p>What is the difference between source code and byte code?</p>
+</li>
+<li>
+<p>What is a class?</p>
+</li>
+<li>
+<p>What is the 'main method'?</p>
+</li>
+<li>
+<p>What is a string?</p>
+</li>
+<li>
+<p>Is capitalisation of letters important in Java (is Java case-sensitive)?</p>
+</li>
+<li>
+<p>What is a bug?</p>
+</li>
+<li>
+<p>What does 'System.out.println' do?</p>
+</li>
+<li>
+<p>How do you put a comment into your program? Give an example.</p>
+</li>
+<li>
+<p>How do you put multi-line comments into your program? Give an example.</p>
+<p>Haha you thought your were done! Go into BlueJ and open the project folder called 'Assignment2' in your Prog11 folder.</p>
+</li>
+<li>
+<p>Create a new class in the Assignment2 folder and name it 'HelloPlanets'. Open it in the editor and replace its contents with the following.</p>
+<pre><code class="language-java">public class HelloPlanets {
+    public static void main(String[] args) {
+
+        String[] planets = {&quot;Mercury&quot;, &quot;Venus&quot;, &quot;Earth&quot;, &quot;Mars&quot;, &quot;Jupiter&quot;, &quot;Saturn&quot;, &quot;Uranus&quot;, &quot;Neptune&quot;, &quot;Pluto&quot;};
+
+        for (int j = 0; j &lt; planets.length; j++) {
+            System.out.println(&quot;Hello &quot; + planets[j] + &quot;!&quot;);
+        }
+    }
+}
+</code></pre>
+<p>Note that Pluto is not actually a planet anymore.</p>
+<p>Compile and run the program. If you aren't sure how, take a look at the steps we used in assignment 1. Copy and paste the output of the program into your Assignment2.txt file as question 10.</p>
+<p>But wait, there's more! Read <a href="http://www.programmedlessons.org/Java9/chap08/ch08_01.html">chapter 8</a>.</p>
+<p>Chapter 8 questions ahoy. Answer them in Latin. Or English. Actually just English.</p>
+</li>
+<li>
+<p>List the 8 primary data types.</p>
+</li>
+<li>
+<p>What is the largest primitive data type for holding an integer?</p>
+</li>
+<li>
+<p>What is the largest primitive data type for holding a floating point number?</p>
+</li>
+<li>
+<p>What is the standard primitive data type for A) Integers and B) floating point?</p>
+</li>
+<li>
+<p>What is <eq><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi mathvariant="normal">.</mi><mn>9</mn><mn>3</mn><mn>4</mn><mn>5</mn><mi>E</mi><mo>+</mo><mn>0</mn><mn>4</mn></mrow><annotation encoding="application/x-tex">1.9345E+04</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="base"><span class="mord">1</span><span class="mord">.</span><span class="mord">9</span><span class="mord">3</span><span class="mord">4</span><span class="mord">5</span><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord">0</span><span class="mord">4</span></span></span></span></eq> equal to without the E-notation.</p>
+</li>
+<li>
+<p>What does the primitive data type 'char' hold?</p>
+</li>
+<li>
+<p>What values can a 'boolean' hold?</p>
+</li>
+</ol>
+<p>That's all, save and submit for JUDGEMENT and RUTHLESS CRITICISM.</p>
+<p>Also good job getting this far! Go take a break and watch some Nintendos on the Mariobox.</p>
+
+    </div>
+
+    <script src="katex.min.js"></script>
+    <script src="highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Programming 11</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="github-markdown.css">
+    <link rel="stylesheet" href="highlight.min.css">
+    <link rel="stylesheet" href="katex.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                overflow-x: scroll;
+                padding: 15px;
+                padding-left: 44px;
+                border: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidenav">
+        <a href="index.html">0</a>
+        <a href="Prog11-1.html">1</a>
+        <a href="Prog11-2.html">2</a>
+        <a href="Prog11-3.html">3</a>
+        <a href="Prog11-4.html">4</a>
+        <a href="Prog11-5.html">5</a>
+        <a href="Prog11-6.html">6</a>
+        <a href="Prog11-7.html">7</a>
+        <a href="Prog11-8.html">8</a>
+        <a href="Prog11-9.html">9</a>
+        <a href="Prog11-10.html">10</a>
+        <a href="Prog11-11.html">11</a>
+        <a href="Prog11-12.html">12</a>
+        <a href="Prog11-13.html">13</a>
+        <a href="Prog11-14.html">14</a>
+        <a href="Prog11-15.html">15</a>
+        <a href="Prog11-16.html">16</a>
+        <a href="Prog11-17.html">17</a>
+        <a href="Prog11-18.html">18</a>
+    </div>
+
+    <div class="markdown-body main">
+        <h1>Programming 11</h1>
+<h2>Assignment 4</h2>
+<p>Time to program some stuff. We got six problems here but before those get this example program into BlueJ, compile it, and run it. How to do that is in Assignment 1 if you've forgotten.</p>
+<pre><code class="language-java">public class BasicsDemo {
+    public static void main(String[] args) {
+        int sum = 0;
+        System.out.println(&quot;Sum = &quot; + sum);
+    }
+}
+</code></pre>
+<p>All this program does is store the value 0 in the integer variable 'sum', then prints out the string &quot;Sum = &quot; and the value of 'sum' (which is still 0).</p>
+<p>Anyways, onto the problems. Put each of your solutions in a separate Java file in BlueJ. So you'll have 6 '.java' files in your 'Assignment4' folder.</p>
+<hr>
+<ol>
+<li>
+<p>Acceleration due to gravity on Earth is around <eq><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>9</mn><mi mathvariant="normal">.</mi><mn>8</mn><mi>m</mi><mi mathvariant="normal">/</mi><msup><mi>s</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">-9.8m/s^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base"><span class="mord">−</span><span class="mord">9</span><span class="mord">.</span><span class="mord">8</span><span class="mord mathit">m</span><span class="mord">/</span><span class="mord"><span class="mord mathit">s</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></eq>. This means that were an object to fall on Earth in a vacuum, it would fall <eq><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>9</mn><mi mathvariant="normal">.</mi><mn>8</mn><mi>m</mi><mi mathvariant="normal">/</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">9.8m/s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord">9</span><span class="mord">.</span><span class="mord">8</span><span class="mord mathit">m</span><span class="mord">/</span><span class="mord mathit">s</span></span></span></span></eq> faster for every second that passed.</p>
+<p>Say you were to want to write a program to calculate the speed of an object dropped on Earth after that object has been falling for some amount of seconds. That program might look something like this:</p>
+<pre><code class="language-java">public class BasicsDemo {
+    public static void main(String[] args) {
+        double gravity = 9.8;
+        double time = 4.2;
+
+        System.out.println(&quot;Speed = &quot; + gravity * time + &quot;m/s &quot;);
+    }
+}
+</code></pre>
+<p>What is the output of this program?</p>
+</li>
+<li>
+<p>You have to purchase tickets for you and your friends to attend a concert. In this insane fantasy world tickets only cost $23.45 each. You also somehow have 7 lazy friends that can't be bothered to buy their own tickets. After falling down some stairs and receiving a concussion, you decide that instead of just using a calculator like a normal person, you are going to write a Java program to calculate the total dollar cost of this ticket purchase. Write that Java program!</p>
+<p>(Store each value in a variable of type double.)</p>
+<p>This question is mostly to test if you can find the asterisk key on your keyboard.</p>
+</li>
+<li>
+<p>Oh by the way there's a 12% tax on those tickets. Modify your program from question 2 to output both the amount of tax you must pay (<eq><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mi>o</mi><mi>t</mi><mi>a</mi><mi>l</mi><mo>∗</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>1</mn><mn>2</mn></mrow><annotation encoding="application/x-tex">total*0.12</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">t</span><span class="mord mathit">o</span><span class="mord mathit">t</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">1</span><span class="mord">2</span></span></span></span></eq>) and the total amount you have to pay (<eq><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mi>o</mi><mi>t</mi><mi>a</mi><mi>l</mi><mo>∗</mo><mn>1</mn><mi mathvariant="normal">.</mi><mn>1</mn><mn>2</mn></mrow><annotation encoding="application/x-tex">total*1.12</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">t</span><span class="mord mathit">o</span><span class="mord mathit">t</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mord">.</span><span class="mord">1</span><span class="mord">2</span></span></span></span></eq>)</p>
+</li>
+<li>
+<p>Change the following program so that it loops 1000 times:</p>
+<pre><code class="language-java">public class BasicsDemo {
+    public static void main(String[] args) {
+        for (int i = 0; i &lt; 10; i++) {
+            System.out.println (&quot;This is line &quot; + i);
+
+            System.out.println (&quot;Anything between the { and } will repeat 10 times&quot;);
+        }
+        System.out.println ( &quot;Finished counting&quot;);
+    }
+}
+</code></pre>
+</li>
+<li>
+<p>Write a program that uses a for-loop to calculate the total cost of purchasing some amount of a product that costs $1.47 each.</p>
+<p>You'll have a variable of type <code>double</code> called <code>price</code>.</p>
+</li>
+<li>
+<p>Write a program that uses a for-loop to calculate the speed of an object in free fall on Earth. The program should output the speed of the object after each second for 10 seconds. Use <eq><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>9</mn><mi mathvariant="normal">.</mi><mn>8</mn><mn>1</mn><mi>m</mi><mi mathvariant="normal">/</mi><msup><mi>s</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">9.81m/s^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base"><span class="mord">9</span><span class="mord">.</span><span class="mord">8</span><span class="mord">1</span><span class="mord mathit">m</span><span class="mord">/</span><span class="mord"><span class="mord mathit">s</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></eq> for the acceleration of the object. It's gonna look a LOT like question 5, but with <code>gravity</code> as a variable instead of <code>price</code>.</p>
+</li>
+</ol>
+
+    </div>
+
+    <script src="katex.min.js"></script>
+    <script src="highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Programming 11</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="github-markdown.css">
+    <link rel="stylesheet" href="highlight.min.css">
+    <link rel="stylesheet" href="katex.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                overflow-x: scroll;
+                padding: 15px;
+                padding-left: 44px;
+                border: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidenav">
+        <a href="index.html">0</a>
+        <a href="Prog11-1.html">1</a>
+        <a href="Prog11-2.html">2</a>
+        <a href="Prog11-3.html">3</a>
+        <a href="Prog11-4.html">4</a>
+        <a href="Prog11-5.html">5</a>
+        <a href="Prog11-6.html">6</a>
+        <a href="Prog11-7.html">7</a>
+        <a href="Prog11-8.html">8</a>
+        <a href="Prog11-9.html">9</a>
+        <a href="Prog11-10.html">10</a>
+        <a href="Prog11-11.html">11</a>
+        <a href="Prog11-12.html">12</a>
+        <a href="Prog11-13.html">13</a>
+        <a href="Prog11-14.html">14</a>
+        <a href="Prog11-15.html">15</a>
+        <a href="Prog11-16.html">16</a>
+        <a href="Prog11-17.html">17</a>
+        <a href="Prog11-18.html">18</a>
+    </div>
+
+    <div class="markdown-body main">
+        <h1>Programming 11</h1>
+<h2>Assignment 7</h2>
+<p>Read <a href="http://www.programmedlessons.org/Java9/chap13/ch13_01.html">chapter 13</a> and <a href="http://www.programmedlessons.org/Java9/chap16/ch16_01.html">chapter 16</a>. Answer the questions as you read.</p>
+<h3>Chapter 13</h3>
+<ol>
+<li>
+<p>Get the following program working in BlueJ:</p>
+<pre><code class="language-java">import java.io.*;
+import java.util.Scanner;
+
+class DoubleDouble {
+    public static void main (String[] args) {
+
+        double value;
+
+        Scanner scan = new Scanner(System.in);
+        System.out.print(&quot;Enter a double:&quot;);
+        value = scan.nextDouble();
+        System.out.println(&quot;value: &quot; + value +&quot; twice value: &quot; + 2.0 * value);
+    }
+}
+</code></pre>
+<p>What happens if you remove the <code>import java.io.*;</code> line?</p>
+</li>
+<li>
+<p>What if you enter &quot;dog&quot; instead of a number when prompted. What about &quot;dog123&quot;?</p>
+</li>
+<li>
+<p>Write <eq><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>7</mn><mi mathvariant="normal">.</mi><mn>3</mn><mi>E</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">7.3E2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base"><span class="mord">7</span><span class="mord">.</span><span class="mord">3</span><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mord">2</span></span></span></span></eq> and <eq><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi mathvariant="normal">.</mi><mn>3</mn><mi>E</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">2.3E-2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="base"><span class="mord">2</span><span class="mord">.</span><span class="mord">3</span><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord">2</span></span></span></span></eq> without E-notation.</p>
+</li>
+<li>
+<p>What is the output of the following line?</p>
+<pre><code class="language-java">System.out.println(Math.sqrt(144));
+</code></pre>
+</li>
+<li>
+<p>What is a <code>static</code> method? (You might have to Google this one)</p>
+</li>
+<li>
+<p>What would the following line output?</p>
+<pre><code class="language-java">System.out.println(Math.sqrt(-8));
+</code></pre>
+</li>
+<li>
+<p>What does the output from the above question mean?</p>
+</li>
+<li>
+<p>In the following 2 lines the first line gives zero as an answer, while the second line gives us the answer we would expect. Why?</p>
+<pre><code class="language-java">System.out.println(Math.sqrt(1/9));
+System.out.println(Math.sqrt((double)1/9));
+</code></pre>
+</li>
+</ol>
+<h3>Chapter 16</h3>
+<ol>
+<li>
+<p>Run the following program in BlueJ.</p>
+<pre><code class="language-java">import java.util.Scanner;
+class NumberTester {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int num;
+        System.out.println(&quot;Enter an integer:&quot;);
+        num = scan.nextInt();
+        if (num &lt; 0) {
+            System.out.println(&quot;The number &quot; + num + &quot; is negative&quot;); // true-branch
+            System.out.println(&quot;negative numbers are less than zero&quot;); // true-branch
+        } else {
+            System.out.println(&quot;The number &quot; + num + &quot; is positive&quot;); // false-branch
+            System.out.print (&quot;positive numbers are greater&quot;); // false-branch
+            System.out.println(&quot;than zero&quot;); // false-branch
+        }
+        System.out.println(&quot;Good-bye for now&quot;); // always executed
+    }
+}
+</code></pre>
+<p>What two symbols designate the beginning and ending of a block?</p>
+</li>
+<li>
+<p>What is the meaning of '<code>==</code>'? What about '<code>!=</code>'?</p>
+</li>
+<li>
+<p>What is a nested <code>if</code> statement?</p>
+</li>
+</ol>
+<h3>Programming Problems</h3>
+<p>Write your code for each of these in a seperate .java file in the Assignment7 folder.</p>
+<ol>
+<li>
+<p><strong>AnnualApplianceCost.java</strong></p>
+<p>Write a program that calculates the annual cost of running an appliance. The program asks the user for the cost per kilowatt-hour and the number of kilowatt-hours the appliance uses in a year.</p>
+<p>Example output:</p>
+<pre><code class="language-text">Enter cost per kilowatt-hour in cents
+8.42
+Enter kilowatt-hours used per year
+653
+Annual cost: 54.9826
+</code></pre>
+</li>
+<li>
+<p><strong>BrickDrop.java</strong></p>
+<p>When a brick is dropped from a tower, it falls faster and faster until it hits the Earth. We can calculate the distance travelled using:</p>
+<p><eq><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mo>=</mo><mo>(</mo><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn><mo>)</mo><mi>g</mi><msup><mi>t</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">d=(1/2)gt^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit">d</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mord">/</span><span class="mord">2</span><span class="mclose">)</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord"><span class="mord mathit">t</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></eq></p>
+<p><eq><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">d</span></span></span></span></eq> being the distance travelled in feet, <eq><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.61508em;"></span><span class="strut bottom" style="height:0.61508em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">t</span></span></span></span></eq> being the time in seconds, and <eq><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.03588em;">g</span></span></span></span></eq> being <eq><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn><mn>2</mn><mi mathvariant="normal">.</mi><mn>1</mn><mn>7</mn><mn>4</mn></mrow><annotation encoding="application/x-tex">32.174</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base"><span class="mord">3</span><span class="mord">2</span><span class="mord">.</span><span class="mord">1</span><span class="mord">7</span><span class="mord">4</span></span></span></span></eq> (the force of gravity acting on the brick).</p>
+<p>Write a program that asks the user for the number of seconds and then prints out the distance traveled.</p>
+<p>Example output:</p>
+<pre><code class="language-text">Enter the number of seconds: 5.4
+Distance: 469.096
+</code></pre>
+<p>Use the program to determine how far a brick falls in 100 seconds.</p>
+</li>
+<li>
+<p><strong>DiscountPrices.java</strong></p>
+<p>During a sale at a store, a 10% discount is applied to purchases over $10.00. Write a program that asks for the amount of a purchase, then calculates the discounted price. The purchase amount will be input in cents (as an integer).</p>
+<pre><code class="language-text">Enter amount of purchases:
+2000
+Discounted price: 1800
+</code></pre>
+</li>
+<li>
+<p><strong>OrderChecker.java</strong></p>
+<p>Bob's Discount Bolts charges the following prices:</p>
+<ul>
+<li>5 cents per bolt</li>
+<li>3 cents per nut</li>
+<li>1 cent per washer</li>
+</ul>
+<p>Write a program that asks the user for the number of bolts, nuts, and washers in their purchase and then calculates and prints out the total. As an added feature, the program checks the order. A correct order must have at least as many nuts as bolts and at least twice as many washers as bolts, otherwise the order has an error.</p>
+<p>For an error the program writes out &quot;Check the Order: too few nuts&quot; or &quot;Check the Order: too few washers&quot; as appropriate. Both error messages are written if the order has both errors. If there are no errors the program writes out &quot;Order is OK.&quot; In all cases the total price in cents (of the specified number of items) is written out.</p>
+<pre><code class="language-text">Number of bolts: 12
+Number of nuts: 8
+Number of washers: 24
+
+Check the Order: too few nuts
+
+Total cost: 108
+</code></pre>
+<p>Use constant variables (<code>final int boltPrice = 5;</code>) for the unit cost of each item.</p>
+</li>
+<li>
+<p><strong>LastChanceGas.java</strong></p>
+<p>Al's Last Chance Gas station sits on Route 190 on the edge of Death Valley. There is no other gas station for 200 miles. Write a program to help drivers decide if they need gas. The program asks for:</p>
+<ul>
+<li>The capacity of the gas tank, in gallons.</li>
+<li>The vehicles gas guage reading in percent.</li>
+<li>The miles per gallon of the vehicle.</li>
+</ul>
+<p>The program then writes out &quot;Get Gas&quot; or &quot;Safe to Proceed&quot; depending on if the car can cross the 200 miles with the gas remaining in the tank.</p>
+<pre><code class="language-text">Tank capacity:
+12
+Gage reading:
+50
+Miles per gallon:
+30
+Get Gas!
+</code></pre>
+<p>Use integers for all input and arithmetic.</p>
+</li>
+<li>
+<p><strong>PieEatingContest.java</strong></p>
+<p>At the State Fair Pie Eating Contest all contestants in the heavyweight division must weigh within 30 pounds of 250 pounds. Write a program that asks for a contestant's weight and then says if the contestant is allowed in the contest.</p>
+</li>
+<li>
+<p><strong>GroundBeefValueCalc.java</strong></p>
+<p>Different packages of ground beef have different percentages of fat and different costs per pound. Write a program that asks the user for:</p>
+<ul>
+<li>The price per pound of package &quot;A&quot;</li>
+<li>The percent lean in package &quot;A&quot;</li>
+<li>The price per pound of package &quot;B&quot;</li>
+<li>The percent lean in package &quot;B&quot;</li>
+</ul>
+<p>The program then calculates the cost per pound of lean (non-fat) beef for each package and writes out which is the best value. Assume that the two packages will not come out equal in value.</p>
+<pre><code class="language-text">Price per pound package A:
+2.89
+Percent lean package A:
+85
+Price per pound package B:
+3.49
+Percent lean package B:
+93
+
+Package A cost per pound of lean:3.4
+Package B cost per pound of lean:3.752688
+Package A is the best value
+</code></pre>
+</li>
+</ol>
+
+    </div>
+
+    <script src="katex.min.js"></script>
+    <script src="highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

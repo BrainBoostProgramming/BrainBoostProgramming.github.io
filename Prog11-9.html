@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Programming 11</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="github-markdown.css">
+    <link rel="stylesheet" href="highlight.min.css">
+    <link rel="stylesheet" href="katex.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                overflow-x: scroll;
+                padding: 15px;
+                padding-left: 44px;
+                border: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidenav">
+        <a href="index.html">0</a>
+        <a href="Prog11-1.html">1</a>
+        <a href="Prog11-2.html">2</a>
+        <a href="Prog11-3.html">3</a>
+        <a href="Prog11-4.html">4</a>
+        <a href="Prog11-5.html">5</a>
+        <a href="Prog11-6.html">6</a>
+        <a href="Prog11-7.html">7</a>
+        <a href="Prog11-8.html">8</a>
+        <a href="Prog11-9.html">9</a>
+        <a href="Prog11-10.html">10</a>
+        <a href="Prog11-11.html">11</a>
+        <a href="Prog11-12.html">12</a>
+        <a href="Prog11-13.html">13</a>
+        <a href="Prog11-14.html">14</a>
+        <a href="Prog11-15.html">15</a>
+        <a href="Prog11-16.html">16</a>
+        <a href="Prog11-17.html">17</a>
+        <a href="Prog11-18.html">18</a>
+    </div>
+
+    <div class="markdown-body main">
+        <h1>Programming 11</h1>
+<h2>Assignment 9</h2>
+<p>From now on you should be adding comments to your code. For all the programs you work on, include comments that explain what each section is doing.</p>
+<p>Do:</p>
+<ul>
+<li>Add comments above each section to briefly describe what each section is doing.</li>
+<li>Be descriptive.</li>
+<li>Use good variable names that describe what each variable is for.</li>
+</ul>
+<p>Do not:</p>
+<ul>
+<li>Add comments to each line. This is not necessary and looks messy.</li>
+<li>Write a book. Keep the length of your comments to the minimum required to explain a section.</li>
+</ul>
+<h3>Chapter 15</h3>
+<p>This section is about loops! How fun.</p>
+<p><a href="http://www.programmedlessons.org/Java9/chap19/ch19_01.html"><strong>Link to Chapter 15</strong></a></p>
+<p>Here's a little template you can copy and paste to get started.</p>
+<pre><code class="language-java">import java.util.Scanner;
+
+class Exercisetwo {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int count;
+
+        String inputString;
+
+        int times;
+
+        System.out.println(&quot;Enter word:&quot;);
+
+        inputString = scan.nextLine();
+
+        times = inputString.length();
+
+        count = 1;
+
+        while (count&lt;=times) {
+            System.out.println(inputString);
+            count = count + 1;
+        }
+    }
+}
+</code></pre>
+<ol>
+<li>
+<p><strong>RunofIntegers.java</strong></p>
+<p>Write a program that asks the user for a starting value and an ending value and then writes all the integers (inclusive) between those two values.</p>
+<p>Example output:</p>
+<pre><code class="language-text">Enter Start:
+5
+Enter End:
+9
+
+5
+6
+7
+8
+9
+</code></pre>
+</li>
+<li>
+<p><strong>WordEcho.java</strong></p>
+<p>Write a program that asks the user to enter a word. The program will then repeat word for as many times as it has characters:</p>
+<pre><code class="language-text">Enter a word:
+Hello
+
+Hello
+Hello
+Hello
+Hello
+Hello
+</code></pre>
+<p>To do this you will need to use the <code>length()</code> method of <code>String</code> that counts the number of characters in a string:</p>
+<pre><code class="language-java">String inputString;
+int times;
+
+times = inputString.length();
+</code></pre>
+</li>
+<li>
+<p><strong>WordsDots.java</strong></p>
+<p>Write a program that asks the user to enter two words. The program then prints out both words on one line. The words will be separated by enough dots so that the total line length is 30:</p>
+<pre><code class="language-text">Enter first word:
+turtle
+Enter second word
+153
+
+turtle....................153
+</code></pre>
+<p>This could be used as part of an index for a book. To print out the dots, use <code>System.out.print(&quot;.&quot;);</code> inside a loop body.</p>
+</li>
+</ol>
+<h3>Chapter 20</h3>
+<p><a href="http://www.programmedlessons.org/Java9/chap20/ch20_01.html"><strong>Link to Chapter 20</strong></a></p>
+<ol>
+<li>
+<p><strong>IntegerAdding.java</strong></p>
+<p>Write a program that adds up integers that the user enters. First the programs asks how many numbers will be added up. Then the program prompts the user for each number. Finally it prints the sum.</p>
+<pre><code class="language-text">How many integers will be added:
+5
+Enter an integer:
+3
+Enter an integer:
+4
+Enter an integer:
+-4
+Enter an integer:
+-3
+Enter an integer:
+7
+
+The sum is 7
+</code></pre>
+<p>Be careful not to add the number of integers (in the example, 5) into the sum.</p>
+<p>Here's the (buggy) solution to this question if you get stuck. Make sure you have it working before handing in:</p>
+<pre><code class="language-java">import java.util.Scanner ;
+
+public class Adder {
+
+    public static void main (String args[]) {
+
+        Scanner scan = new Scanner(System.in);
+
+        int n, tot, input,c;
+
+        tot = 0;
+
+        System.out.println(&quot;How many integers will be added?&quot;);
+
+        n = scan.nextInt();
+
+        c = 0;//you are going to count so start at zero
+
+        //keep going while your counter is less than the number of times you want to print
+        while (c &lt; n) {
+
+            System.out.println ( &quot;Enter an integer:&quot; );
+
+            input = scan.nextInt ();
+
+            tot = tot + input;
+
+            c++;//this means add 1 to c you could do c=c+1; instead
+        }
+
+        System.out.println ( &quot;The sum is &quot; + tot + &quot;.&quot;);
+    }
+}
+</code></pre>
+</li>
+<li>
+<p><strong>HarmonicSum.java</strong></p>
+<p>Write a program that computes the following sum:</p>
+<p><eq><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mi>u</mi><mi>m</mi><mo>=</mo><mn>1</mn><mi mathvariant="normal">.</mi><mn>0</mn><mi mathvariant="normal">/</mi><mn>1</mn><mo>+</mo><mn>1</mn><mi mathvariant="normal">.</mi><mn>0</mn><mi mathvariant="normal">/</mi><mn>2</mn><mo>+</mo><mn>1</mn><mi mathvariant="normal">.</mi><mn>0</mn><mi mathvariant="normal">/</mi><mn>3</mn><mo>+</mo><mn>1</mn><mi mathvariant="normal">.</mi><mn>0</mn><mi mathvariant="normal">/</mi><mn>4</mn><mo>+</mo><mn>1</mn><mi mathvariant="normal">.</mi><mn>0</mn><mi mathvariant="normal">/</mi><mn>5</mn><mo>+</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo>+</mo><mn>1</mn><mi mathvariant="normal">.</mi><mn>0</mn><mi mathvariant="normal">/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">sum = 1.0/1 + 1.0/2 + 1.0/3 + 1.0/4 + 1.0/5 + .... + 1.0/N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit">s</span><span class="mord mathit">u</span><span class="mord mathit">m</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord">1</span><span class="mord">.</span><span class="mord">0</span><span class="mord">/</span><span class="mord">1</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mord">.</span><span class="mord">0</span><span class="mord">/</span><span class="mord">2</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mord">.</span><span class="mord">0</span><span class="mord">/</span><span class="mord">3</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mord">.</span><span class="mord">0</span><span class="mord">/</span><span class="mord">4</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mord">.</span><span class="mord">0</span><span class="mord">/</span><span class="mord">5</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mord">.</span><span class="mord">0</span><span class="mord">/</span><span class="mord mathit" style="margin-right:0.10903em;">N</span></span></span></span></eq></p>
+<p>N is an integer limit that the user enters.</p>
+<pre><code class="language-text">Enter N
+4
+
+Sum is: 2.08333333333
+</code></pre>
+<p>Use an integer variable for the loop counter (of course!) but do the math using double precision.</p>
+</li>
+</ol>
+
+    </div>
+
+    <script src="katex.min.js"></script>
+    <script src="highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

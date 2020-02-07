@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Programming 11</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="github-markdown.css">
+    <link rel="stylesheet" href="highlight.min.css">
+    <link rel="stylesheet" href="katex.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                overflow-x: scroll;
+                padding: 15px;
+                padding-left: 44px;
+                border: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidenav">
+        <a href="index.html">0</a>
+        <a href="Prog11-1.html">1</a>
+        <a href="Prog11-2.html">2</a>
+        <a href="Prog11-3.html">3</a>
+        <a href="Prog11-4.html">4</a>
+        <a href="Prog11-5.html">5</a>
+        <a href="Prog11-6.html">6</a>
+        <a href="Prog11-7.html">7</a>
+        <a href="Prog11-8.html">8</a>
+        <a href="Prog11-9.html">9</a>
+        <a href="Prog11-10.html">10</a>
+        <a href="Prog11-11.html">11</a>
+        <a href="Prog11-12.html">12</a>
+        <a href="Prog11-13.html">13</a>
+        <a href="Prog11-14.html">14</a>
+        <a href="Prog11-15.html">15</a>
+        <a href="Prog11-16.html">16</a>
+        <a href="Prog11-17.html">17</a>
+        <a href="Prog11-18.html">18</a>
+    </div>
+
+    <div class="markdown-body main">
+        <h1>Programming 11</h1>
+<h2>Assignment 10</h2>
+<p>Ayyy what up. More loops. Only 4 things to do tho.</p>
+<p>Relevant chapters:</p>
+<ul>
+<li><a href="http://www.programmedlessons.org/Java9/chap21/ch21_01.html"><strong>Chapter 21</strong></a></li>
+<li><a href="http://www.programmedlessons.org/Java9/chap22/ch22_01.html"><strong>Chapter 22</strong></a></li>
+</ul>
+<p>Here's a solution for the first question to get you started:</p>
+<pre><code class="language-java">import java.util.Scanner;
+
+class mpg {
+
+    public static void main (String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+
+        double initialmiles, finalmiles, gallons;
+
+        System.out.print(&quot;Enter initial miles: &quot;);
+
+        initialmiles = scan.nextDouble();
+        //keep going while initialmiles is NOT negative 1
+        while (!(initialmiles == -1)) {
+
+            System.out.print(&quot;Enter Final Miles: &quot;);
+
+            finalmiles = scan.nextDouble();
+
+            System.out.print(&quot;Enter gallons: &quot;);
+
+            gallons = scan.nextDouble();
+
+            System.out.println(&quot;Miles per Gallon: &quot;+( finalmiles-initialmiles )/gallons);
+
+            System.out.println();
+
+            System.out.print(&quot;Enter initial miles (-1 to exit): &quot;);
+
+            initialmiles = scan.nextDouble();
+        }
+
+        System.out.println(&quot;Bye&quot;);
+    }
+}
+</code></pre>
+<ol>
+<li>
+<p><strong>MilesPerGallon.java</strong></p>
+<p>Write a program that calculates miles per gallon for a list of cars. The data for each car consists of initial odometer reading, final odometer reading, and number of gallons of gas. The user signals that there are no more cars by entering a negative initial odometer reading.</p>
+<pre><code class="language-text">Miles Per Gallon Program
+Initial miles:
+15000
+Final miles:
+15250
+Gallons
+10
+Miles per Gallon: 25.0
+
+Initial miles:
+107000
+Final miles:
+107450
+Gallons
+15
+Miles per Gallon: 30.0
+
+Initial miles:
+-1
+bye
+</code></pre>
+</li>
+<li>
+<p><strong>InrangeAdder.java</strong></p>
+<p>Write a program that asks the user for the low and high integer in a range of integers. The program then asks the user for integers to be added up. The program computes two sums:</p>
+<p>The sum of integers that are in the range (inclusive), and the sum of integers that are outside of the range.</p>
+<p>The user signals the end of input with a 0.</p>
+<pre><code class="language-text">In-range Adder
+Low end of range:
+20
+High end of range:
+50
+Enter data:
+21
+Enter data:
+60
+Enter data:
+49
+Enter data:
+30
+Enter data:
+91
+Enter data:
+0
+Sum of in range values: 100
+Sum of out of range values: 151
+</code></pre>
+</li>
+<li>
+<p><strong>ShippingCalc.java</strong></p>
+<p>A mail order company charges $3.00 for handling, free shipping for orders 10 pounds or less, plus $0.25 for each pound over 10. Write a program that repeatedly asks the user for the weight of an order, then writes out the shipping charge. The program stops when a weight of zero or less is entered.</p>
+<pre><code class="language-text">Weight of Order:
+5
+Shipping Cost: $3.00
+
+Weight of Order
+20
+Shipping Cost: $5.50
+
+Weight of Order
+0
+
+bye
+</code></pre>
+</li>
+<li>
+<p><strong>RectangleArea.java</strong></p>
+<p>A computer aided design program expects users to enter the coordinates two corners for each of several of rectangles (see diagram.) The sides of the rectangles are assumed to be parallel to the X and Y axes. The coordinates of each corner is entered as a pair of integers, first the X coordinate and then the Y coordinate. The origin of the coordinate system (0,0) is in the upper left, so Y increases going downward, and X increases to the right.</p>
+<p>For each rectangle, the program calculates and writes out the height, the width, and the area of the rectangle. The two corners entered for each rectangle must be diagonally opposite (upper left and lower right, or upper right and lower left), but which choice is made for each rectangle is up to the user. The user can enter the corners in any order. Height and width are always positive (the program will have to adjust its calculations so that this is true.)</p>
+<p>The program ends gracefully when the user enters corners which cannot be those of a rectangle (either the height is zero, the width is zero, or both.)</p>
+<pre><code class="language-text">Computer Aided Design Program
+First corner X coordinate:
+100
+First corner Y coordinate:
+100
+Second corner X coordinate:
+250
+Second corner Y coordinate
+200
+Width: 150 Height: 100 Area: 15000
+
+First corner X coordinate:
+250
+First corner Y coordinate:
+200
+Second corner X coordinate:
+100
+Second corner Y coordinate
+100
+Width: 150 Height: 100 Area: 15000
+
+First corner X coordinate:
+100
+First corner Y coordinate:
+200
+Second corner X coordinate:
+250
+Second corner Y coordinate
+100
+Width: 150 Height: 100 Area: 15000
+
+First corner X coordinate:
+100
+First corner Y coordinate:
+100
+Second corner X coordinate:
+100
+Second corner Y coordinate
+100
+Width: 0 Height: 0 Area: 0
+
+finished
+</code></pre>
+</li>
+</ol>
+
+    </div>
+
+    <script src="katex.min.js"></script>
+    <script src="highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

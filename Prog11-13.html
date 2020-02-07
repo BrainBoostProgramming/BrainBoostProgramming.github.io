@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Programming 11</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="github-markdown.css">
+    <link rel="stylesheet" href="highlight.min.css">
+    <link rel="stylesheet" href="katex.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                overflow-x: scroll;
+                padding: 15px;
+                padding-left: 44px;
+                border: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidenav">
+        <a href="index.html">0</a>
+        <a href="Prog11-1.html">1</a>
+        <a href="Prog11-2.html">2</a>
+        <a href="Prog11-3.html">3</a>
+        <a href="Prog11-4.html">4</a>
+        <a href="Prog11-5.html">5</a>
+        <a href="Prog11-6.html">6</a>
+        <a href="Prog11-7.html">7</a>
+        <a href="Prog11-8.html">8</a>
+        <a href="Prog11-9.html">9</a>
+        <a href="Prog11-10.html">10</a>
+        <a href="Prog11-11.html">11</a>
+        <a href="Prog11-12.html">12</a>
+        <a href="Prog11-13.html">13</a>
+        <a href="Prog11-14.html">14</a>
+        <a href="Prog11-15.html">15</a>
+        <a href="Prog11-16.html">16</a>
+        <a href="Prog11-17.html">17</a>
+        <a href="Prog11-18.html">18</a>
+    </div>
+
+    <div class="markdown-body main">
+        <h1>Programming 11</h1>
+<h2>Assignment 13</h2>
+<p>This assignment is all about RNG. That's Random Number Generating to those whom'st are unaware.</p>
+<p>First let's take a look at <code>for</code> loops. They are pretty nice. Here's a picture that I took from the internet:</p>
+<p><img src="https://www.w3resource.com/w3r_images/java-for-loop-image1.png" alt="img"></p>
+<p>After the keyword <code>for</code> there are three things going down.</p>
+<p>First: <code>int i = 0;</code> is saying that within the scope of this loop there shall exist an integer variable <code>i</code> and it will start at 0.</p>
+<p>Second: <code>i &lt; 10;</code> is the condition for the loop to continue under. Once <code>i</code> is greater than or equal to 10, the loop will end.</p>
+<p>Third: <code>i++</code> is increasing <code>i</code> by one each time the loop completes.</p>
+<p>Some examples:</p>
+<pre><code class="language-java">//print out numbers from 0 to 1000
+for (int i = 0; i &lt; 1001; i++) {
+    System.out.println(i);
+}
+</code></pre>
+<pre><code class="language-java">//print out numbers from 50 to 25
+for (int i = 50; i &gt; 24; i--) {
+    System.out.println(i);
+}
+</code></pre>
+<pre><code class="language-java">//print out 0-100 in increments of 5
+for (int i = 0; i &lt; 101; i += 5) {
+    System.out.println(i);
+}
+</code></pre>
+<pre><code class="language-java">//print out each character of a string on a new line
+String hello = &quot;Hello World&quot;;
+for (int i = 0; i &lt; hello.length(); i++) {
+    System.out.println(hello[i]);
+}
+</code></pre>
+<p>There's five questions and they all involve the <a href="https://docs.oracle.com/javase/9/docs/api/java/util/Random.html"><code>java.util.Random</code></a> class. Here's a program that outputs 100 random numbers between 1 and 25:</p>
+<pre><code class="language-java">import java.util.Scanner;
+import java.util.Random;
+
+class GenerateNumbers {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        Random generaterandom = new Random();
+
+        int num;
+
+        for (int i = 0; i &lt; 100; i++) {
+            num = generaterandom.nextInt(25) + 1;
+            System.out.println(i + &quot; &quot; + num);
+        }
+    }
+}
+</code></pre>
+<p>Use the above program as a starting point for the following questions.</p>
+<ol>
+<li>
+<p><strong>SumRandom.java</strong></p>
+<p>Modify the GenerateNumbers program so that it outputs the sum of the generated numbers.</p>
+</li>
+<li>
+<p><strong>RandomGuess.java</strong></p>
+<p>Write a program that will generate a random number between 1 and 100 and prompts the user to guess the number. If the user guesses wrong, output the amount they missed by. No need to use loops for this program.</p>
+</li>
+<li>
+<p><strong>GuessGame.java</strong></p>
+<p>The program below is the Guess The Number game. Modify it so that it informs the user how many guesses they took before getting it right. When they get the right answer, ask if the want to play again and get their input (1 for yes, 0 for no).</p>
+<pre><code class="language-java">import java.util.Scanner;
+import java.util.Random;
+
+class Guessgame {
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+        Random generaterandom = new Random();
+
+        int num, guess;
+        num = generaterandom.nextInt(100) + 1;
+
+        //putting a do here instead of the while guarantee’s that the loop will execute at least once. with a while you have to make sure the conditions will cause the loop to happen at least once.
+        do {
+            System.out.print(&quot;Guess the number: &quot;);
+            guess = scan.nextInt();
+            if (guess &gt; num) {
+                System.out.println(&quot;Too High&quot;);
+            }
+
+            if (guess &lt; num) {
+                System.out.println(&quot;Too Low&quot;);
+            }
+        } while (num != guess); //by putting the while here it evaluates the condition after executing the do statement
+
+        System.out.println(&quot;You got it&quot;);
+    }
+}
+</code></pre>
+</li>
+<li>
+<p><strong>TestYourLuck.java</strong></p>
+<p>Write a program that uses a <code>for</code> loop to loop 10 times. Generate a new random number between 1-100 inside the loop. Have the user guess if the number is between 1-50 or 51-100. (Enter 1 for 1-50, Enter 2 for 51-100). Count how many times the user picks the correct choice. Once the loop finishes, output the results. If they were correct more than 6 times, output &quot;Lucky&quot;.</p>
+</li>
+<li>
+<p><strong>FormattingAndNumericOutput.java</strong></p>
+<p><a href="https://repositories.abbyvirtual.com/avsCloud/PUBLIC/Grade11Courses/Java11/CS151/Notes/chap24B/ch24B_1.html">Read this chapter.</a></p>
+<p><a href="https://repositories.abbyvirtual.com/avsCloud/PUBLIC/Grade11Courses/Java11/CS151/Notes/chap24B/chap24Bquiz.html">Do this quiz.</a></p>
+<p>Write a program to demonstrate your understanding of formatting of numeric output. Please include outputs of different formats for integers and doubles.</p>
+</li>
+</ol>
+
+    </div>
+
+    <script src="katex.min.js"></script>
+    <script src="highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

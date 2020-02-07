@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Programming 11</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="github-markdown.css">
+    <link rel="stylesheet" href="highlight.min.css">
+    <link rel="stylesheet" href="katex.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                overflow-x: scroll;
+                padding: 15px;
+                padding-left: 44px;
+                border: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidenav">
+        <a href="index.html">0</a>
+        <a href="Prog11-1.html">1</a>
+        <a href="Prog11-2.html">2</a>
+        <a href="Prog11-3.html">3</a>
+        <a href="Prog11-4.html">4</a>
+        <a href="Prog11-5.html">5</a>
+        <a href="Prog11-6.html">6</a>
+        <a href="Prog11-7.html">7</a>
+        <a href="Prog11-8.html">8</a>
+        <a href="Prog11-9.html">9</a>
+        <a href="Prog11-10.html">10</a>
+        <a href="Prog11-11.html">11</a>
+        <a href="Prog11-12.html">12</a>
+        <a href="Prog11-13.html">13</a>
+        <a href="Prog11-14.html">14</a>
+        <a href="Prog11-15.html">15</a>
+        <a href="Prog11-16.html">16</a>
+        <a href="Prog11-17.html">17</a>
+        <a href="Prog11-18.html">18</a>
+    </div>
+
+    <div class="markdown-body main">
+        <h1>Programming 11</h1>
+<h2>Assignment 11</h2>
+<p>Kinda big looking assignment here, but it's mostly review so don't worry about it. Or worry about it I guess, up to you.</p>
+<p>Read up: <a href="http://www.programmedlessons.org/Java9/chap23/ch23_01.html">Chapter 23</a> and <a href="https://repositories.abbyvirtual.com/avsCloud/PUBLIC/Grade11Courses/Java11/CS151/Notes/chap20/ch20_1.html">this other Chapter</a>. The second link is allegedly &quot;kind of strange&quot; so don't read too much of it lest it corrupt you.</p>
+<p>Note: do note use a String to control a while loop.</p>
+<h3>Chapter 23 Questions</h3>
+<ol>
+<li>
+<p><strong>CreditCardBill.java</strong></p>
+<p>Say that you owe the credit card company $1000.00. The company charges you 1.5% per month on the unpaid balance. You have decided to stop using the card and to pay off the debt by making a monthly payment of <eq><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.10903em;">N</span></span></span></span></eq> dollars a month. Write a program that asks for the monthly payment, then writes out the balance and total payments so far for every succeeding month until the balance is zero or less.</p>
+<p>Example output:</p>
+<pre><code class="language-text">Enter the monthly payment:
+100
+Month: 1        balance: 915.0  total payments: 100.0
+Month: 2        balance: 828.725        total payments: 200.0
+Month: 3        balance: 741.155875     total payments: 300.0
+Month: 4        balance: 652.273213125  total payments: 400.0
+Month: 5        balance: 562.057311321875       total payments: 500.0
+Month: 6        balance: 470.4881709917031      total payments: 600.0
+Month: 7        balance: 377.54549355657866     total payments: 700.0
+Month: 8        balance: 283.20867595992735     total payments: 800.0
+Month: 9        balance: 187.4568060993263      total payments: 900.0
+Month: 10       balance: 90.26865819081618      total payments: 1000.0
+Month: 11       balance: -8.377311936321576     total payments: 1100.0
+</code></pre>
+<p>For each month, calculate the interest due on the unpaid balance. Then calculate the new balance by adding the interest and subtracting the payment.</p>
+<p>Hint:</p>
+<p>Something like this but in a <code>while</code> loop.</p>
+<pre><code class="language-java">balance = balance * 1.015;
+balance = balance - payment;
+</code></pre>
+</li>
+<li>
+<p><strong>DrugPotency.java</strong></p>
+<p>A certain drug loses 4% of its effectiveness every month it is in storage. When its effectiveness is below 50% it is considered expired and must be discarded. Write a program that determines how many months the drug can remain in storage. Ask what the initial effectiveness of the drug is first.</p>
+<p>Example output:</p>
+<pre><code class="language-text">Enter current effectiveness percent:
+100
+month: 0        effectiveness: 100.0
+month: 1        effectiveness: 96.0
+month: 2        effectiveness: 92.16
+month: 3        effectiveness: 88.47359999999999
+month: 4        effectiveness: 84.93465599999999
+month: 5        effectiveness: 81.53726975999999
+month: 6        effectiveness: 78.27577896959998
+month: 7        effectiveness: 75.14474781081599
+month: 8        effectiveness: 72.13895789838334
+month: 9        effectiveness: 69.253399582448
+month: 10       effectiveness: 66.48326359915008
+month: 11       effectiveness: 63.82393305518407
+month: 12       effectiveness: 61.27097573297671
+month: 13       effectiveness: 58.82013670365764
+month: 14       effectiveness: 56.46733123551133
+month: 15       effectiveness: 54.20863798609088
+month: 16       effectiveness: 52.04029246664724
+month: 17       effectiveness: 49.95868076798135 DISCARDED
+</code></pre>
+</li>
+</ol>
+<h3>Other Strange Chapter Questions</h3>
+<ol>
+<li>
+<p><strong>ComboLock.java</strong></p>
+<p>Copy/paste this program, read it, understand it.</p>
+<pre><code class="language-java">import java.util.Scanner;
+
+class ComboLock {
+    public static void main(String[] args) {
+        int lockFirst = 6, lockSecond = 12, lockThird = 30;
+        int numb;
+        Scanner scan = new Scanner(System.in);
+
+        int attempt = 0;
+        boolean open = false;
+
+        while (attempt &lt; 3 &amp;&amp; !open) {
+            // try a combination, setting open to &quot;true&quot; if correct
+            boolean correct = true;
+
+            //First Number
+            System.out.println(&quot;\nEnter first number: &quot;);
+            numb = scan.nextInt();
+
+            if (numb != lockFirst)
+                correct = false;
+
+            //Second Number
+            System.out.println(&quot;Enter second number: &quot;);
+            numb  = scan.nextInt();
+
+            if (numb != lockSecond)
+                correct = false;
+
+            //Third Number
+            System.out.println(&quot;Enter third number: &quot;);
+            numb  = scan.nextInt();
+
+            if (numb != lockThird)
+                correct = false;
+
+            //Result
+            if (correct) {
+                System.out.println(&quot;Lock opens&quot;);
+                open = true;
+            } else
+                System.out.println(&quot;Lock does not open&quot;);
+
+            attempt = attempt + 1;
+        }
+    }
+}
+</code></pre>
+<p>The program simulates a combination lock. The combination consists of three integers stored in variables. The user must enter the three integers in the correct order. Modify this program so that each entered integer can be within plus or minus three of the correct number.</p>
+<p>For example, if the combination is 10-20-30, the following will work:</p>
+<pre><code class="language-text">Enter first number:
+13
+Enter second number:
+17
+Enter third number:
+31
+Lock opens
+</code></pre>
+</li>
+<li>
+<p><strong>GuessingGame.java</strong></p>
+<p>Write a program that implements a guessing game:</p>
+<p>The program picks a random number from 1 to 10. Now the user gets three guesses. As soon as the user enters the correct number the program writes a winning message and exits. If the user fails to enter the correct number in three guesses, the program writes a failure message and exits.</p>
+<p>You will need <code>Math.random()</code>. This returns a '<a href="https://en.wikipedia.org/wiki/Pseudorandom_number_generator">random</a>' <code>double</code> between 0.0 and 1.0.</p>
+<p><a href="https://docs.oracle.com/javase/9/docs/api/java/lang/Math.html">You can check out the documentation for the <code>Math</code> class if you want!</a></p>
+<p>Example:</p>
+<pre><code class="language-java">double someValue = Math.random(); // someValue is between 0.0 and 1.0
+</code></pre>
+<pre><code class="language-java">int someValue = (int)(Math.random() * 100) + 1; //gives you a number between 1 and 100. without the +1 you get 0 to 99.
+</code></pre>
+</li>
+</ol>
+<h3>Review Questions</h3>
+<p>You've done all this before. Look at your older assignments if you get stuck.</p>
+<ol>
+<li>
+<p><strong>NamePrinted.java</strong></p>
+<p>Print your name on the screen. Don't use variables.</p>
+</li>
+<li>
+<p><strong>InfoPrinted.java</strong></p>
+<p>Ask for a name, address, city, province, and postal-code and print them on the screen.</p>
+</li>
+<li>
+<p><strong>MathOperations.java</strong></p>
+<p>Ask for 2 numbers (use doubles) and print them added, subtracted, multiplied, and divided.</p>
+</li>
+<li>
+<p><strong>IncomeCalc.java</strong></p>
+<p>Ask how much a person gets paid per hour. Ask how many hours they worked. Calculate and display their gross pay. Their tax rate is 30%. Calculate and display the tax and finally show the net income (gross income – tax).</p>
+</li>
+<li>
+<p><strong>Cents.java</strong></p>
+<p>Ask how many cents a person has. Convert this amount into dollars and cents (just use integers for variables). When you divide by 100 you will get the dollar amount and the remainder will be the cents. (ie 465 = 4 dollars and 65 cents).</p>
+</li>
+<li>
+<p><strong>ConcertTickets.java</strong></p>
+<p>Ask for a ticket price. Ask how many tickets to order. Calculate the subtotal (tickets*cost), tax (6% GST and 7% PST), and total (subtotal + GST + PST).</p>
+</li>
+<li>
+<p><strong>ParcelShipping.java</strong></p>
+<p>Ask for the height, width, depth, and weight of a parcel that needs to be delivered. The basic charge is $5. If the volume <code>(height * width * depth)</code> is greater than 5 cubic meters then an oversize charge of $20 is added to the basic charge. If the weight is greater than 5kg then another $10 is added to the basic charge. Print out the charges and the total for the parcel. If the parcel is not oversize then show $0 for the oversize charge and if the weight is not greater than 5kg then show $0 for the overweight charge. All parcels are charged the basic charge.</p>
+</li>
+<li>
+<p><strong>ParcelShipping2.java</strong></p>
+<p>Copy/paste ParcelShipping.java (rename the class to ParcelShipping2). Add a while loop so the program will continue calculating shipping for parcels until the user exits.</p>
+</li>
+</ol>
+
+    </div>
+
+    <script src="katex.min.js"></script>
+    <script src="highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Programming 11</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="github-markdown.css">
+    <link rel="stylesheet" href="highlight.min.css">
+    <link rel="stylesheet" href="katex.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                overflow-x: scroll;
+                padding: 15px;
+                padding-left: 44px;
+                border: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidenav">
+        <a href="index.html">0</a>
+        <a href="Prog11-1.html">1</a>
+        <a href="Prog11-2.html">2</a>
+        <a href="Prog11-3.html">3</a>
+        <a href="Prog11-4.html">4</a>
+        <a href="Prog11-5.html">5</a>
+        <a href="Prog11-6.html">6</a>
+        <a href="Prog11-7.html">7</a>
+        <a href="Prog11-8.html">8</a>
+        <a href="Prog11-9.html">9</a>
+        <a href="Prog11-10.html">10</a>
+        <a href="Prog11-11.html">11</a>
+        <a href="Prog11-12.html">12</a>
+        <a href="Prog11-13.html">13</a>
+        <a href="Prog11-14.html">14</a>
+        <a href="Prog11-15.html">15</a>
+        <a href="Prog11-16.html">16</a>
+        <a href="Prog11-17.html">17</a>
+        <a href="Prog11-18.html">18</a>
+    </div>
+
+    <div class="markdown-body main">
+        <h1>Programming 11</h1>
+<h2>Assignment 15</h2>
+<p>This assignment recommends reading <a href="http://www.programmedlessons.org/Java9/chap31/ch31_01.html">this chapter</a> but we've gone over it already. The gist of it is that increment (<code>++</code>) and decrement (<code>--</code>) operators exist and are useful.</p>
+<p>Here's a handy table of some more assignment operators:</p>
+<p><img src="https://i.imgur.com/8Xzf8S6.png" alt="img"></p>
+<p>Do read <a href="http://www.programmedlessons.org/Java9/chap34/ch34_01.html">this chapter</a> as it is relevant to the questions of this assignment and covers the <code>switch</code> statement. Switch statements do pretty much the same thing as an if/else if/else block but are easier to make sense of and use in some cases. Take this example from the Java tutorial on switch statements:</p>
+<pre><code class="language-java">public class SwitchDemo {
+    public static void main(String[] args) {
+
+        int month = 8;
+        String monthString;
+        switch (month) {
+            case 1:  monthString = &quot;January&quot;;
+                     break;
+            case 2:  monthString = &quot;February&quot;;
+                     break;
+            case 3:  monthString = &quot;March&quot;;
+                     break;
+            case 4:  monthString = &quot;April&quot;;
+                     break;
+            case 5:  monthString = &quot;May&quot;;
+                     break;
+            case 6:  monthString = &quot;June&quot;;
+                     break;
+            case 7:  monthString = &quot;July&quot;;
+                     break;
+            case 8:  monthString = &quot;August&quot;;
+                     break;
+            case 9:  monthString = &quot;September&quot;;
+                     break;
+            case 10: monthString = &quot;October&quot;;
+                     break;
+            case 11: monthString = &quot;November&quot;;
+                     break;
+            case 12: monthString = &quot;December&quot;;
+                     break;
+            default: monthString = &quot;Invalid month&quot;;
+                     break;
+        }
+        System.out.println(monthString);
+    }
+}
+</code></pre>
+<p>This could also be achieved like so:</p>
+<pre><code class="language-java">int month = 8;
+if (month == 1) {
+    System.out.println(&quot;January&quot;);
+} else if (month == 2) {
+    System.out.println(&quot;February&quot;);
+}
+// and so on
+</code></pre>
+<p>One thing to note is that without the <code>break;</code> after each case in the switch, the code will keep running through the cases.</p>
+<ol>
+<li>
+<p><strong>TimesTable.java</strong></p>
+<p>Start by creating this class and deleting the Counter1-5.java files from your course folder because I misread the question when creating them. Oops.</p>
+<p>Write a program that asks the user what times table the user would like to do. The program will show the user a question from that times table and prompt for the answer. If the user is correct, output 'Correct', else show the correct answer. The program will keep track of the number of correct guesses and upon finishing the times table, will output the score.</p>
+<p>Example output:</p>
+<pre><code class="language-text">Enter times table: 3
+3x1= 3
+Correct!
+3x2 = 4
+Incorrect! Answer is 6.
+3x3 = 9
+Correct!
+You got 2 out of 3 questions right!
+</code></pre>
+</li>
+<li>
+<p><strong>NumberSquarer.java</strong></p>
+<p>Nice straightforward one here. In a loop, ask the user for a number and print out the square of that number. Continue the program until the user enters 0.</p>
+<p>Example output:</p>
+<pre><code class="language-text">Enter number: 5
+5^2=25
+Enter number: 3
+3^2=9
+Enter number: 6
+6^2=36
+Enter number: 0
+Bye
+</code></pre>
+</li>
+<li>
+<p><strong>LibraryFine.java</strong></p>
+<p>Delete the LibraryFine2.java file if it's in your assignment folder, and rename LibraryFine1.java to LibraryFine.java. I must've been half asleep when I made the course skeleton.</p>
+<p>Use a switch statement for this.</p>
+<p>A library has a system for charging fines. Each letter from A through F represents a different daily fine for overdue books as follows:</p>
+<ul>
+<li>A = 0.10</li>
+<li>B = 0.25</li>
+<li>C = 0.50</li>
+<li>D = 1.00</li>
+<li>E = 2.00</li>
+<li>F = 5.00</li>
+</ul>
+<p>The program will prompt the user to enter an amount of days overdue, as well as the category of fine (as a letter). Output the total fine by multiplying the days overdue by the cost associated with the entered letter according to the above list.</p>
+<p>The program should run in a loop and continue until a value of 0 is entered for the days overdue.</p>
+<p>Here is an example program that you can look at for clues:</p>
+<pre><code class="language-java">import java.util.Scanner;
+
+class Switcher {
+    public static void main(String[] args) {
+
+        String color;
+        char choice;
+        String message = &quot;Color is&quot;;
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print(&quot;Enter a color letter: &quot;);
+        color = scan.nextLine();
+
+        color = color.trim(); //remove any leading or trailing whitespace
+        color = color.toUpperCase(); //convert the whole string to uppercase
+        choice = color.charAt(0); //get the first of the string
+
+        switch (choice) {
+            case 'R':
+                message = message + &quot; red&quot;;
+                break;
+            case 'O':
+                message = message + &quot; orange&quot;;
+                break;
+            case 'Y':
+                message = message + &quot; yellow&quot;;
+                break;
+            case 'G':
+                message = message + &quot; green&quot;;
+                break;
+            case 'B':
+                message = message + &quot; blue&quot;;
+                break;
+            case 'V':
+                message = message + &quot; violet&quot;;
+                break;
+            default:
+                message = message + &quot; unknown&quot;;
+        }
+
+        System.out.println(message + &quot; &quot; + choice);
+    }
+}
+</code></pre>
+</li>
+</ol>
+
+    </div>
+
+    <script src="katex.min.js"></script>
+    <script src="highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>
